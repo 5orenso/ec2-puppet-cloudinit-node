@@ -1,7 +1,7 @@
 class nodeapp::prework {
 
 	file { 'nodeapp_srv' :
-        name   => '/srv/'
+        name   => '/srv/',
         ensure => 'directory',
         owner  => 'root',
         group  => 'www-data',
