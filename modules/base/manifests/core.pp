@@ -7,5 +7,8 @@ class base::core {
     package { 'g++' :
         ensure => installed,
     }
+    package { 'make' :
+        ensure => installed,
+    }
 
 }
