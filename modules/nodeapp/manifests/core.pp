@@ -1,5 +1,5 @@
 class nodeapp::core {
-    notice("I am a node $::appname and want the software")
+    notice("I am a node ${::appname} and want the software")
 
     exec { "nodeapp_download_config":
         command => "git clone ${::gitconfigrepo} /srv/config/",
@@ -16,9 +16,9 @@ class nodeapp::core {
     } ->
 
     exec { "nodeapp_unpack_src":
-        command => "tar -zxvf *.tar.gz",
+        command => "npm install --production",
         path    => "/usr/local/bin/:/usr/bin/:/bin/",
-        cwd     => "/srv/",
+        cwd     => "/srv/${::appname}/",
         require => Class["nodeapp::prework"]
     } ->
 
