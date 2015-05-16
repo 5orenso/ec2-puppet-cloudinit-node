@@ -8,14 +8,6 @@ class nodeapp::prework {
         mode   => 750,
     }
 
-    file { "nodeapp_config" :
-        name   => "/srv/config/",
-        ensure => "directory",
-        owner  => "root",
-        group  => "www-data",
-        mode   => 750,
-    }
-
     file { "nodeapp_log" :
         name   => "/var/log/${::appname}",
         ensure => "directory",
