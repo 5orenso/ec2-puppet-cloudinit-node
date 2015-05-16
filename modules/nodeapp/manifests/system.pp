@@ -6,7 +6,7 @@ class nodeapp::system {
         owner => root,
         group => root,
         mode  => 644,
-        source => "/etc/${::appname}/upstart.conf",
+        source => "/srv/${::appname}/etc/upstart.conf",
         require => [Class["nodeapp::prework"], Class["nodeapp::core"]],
     } ->
 
@@ -16,7 +16,7 @@ class nodeapp::system {
         owner => root,
         group => root,
         mode  => 644,
-        source => "/etc/${::appname}/logrotate.conf",
+        source => "/srv/${::appname}/etc/logrotate.conf",
         require => [Class["nodeapp::prework"], Class["nodeapp::core"]],
     } ->
 
