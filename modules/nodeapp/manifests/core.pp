@@ -28,6 +28,14 @@ class nodeapp::core {
         ensure  => link,
         target  => "/srv/config/${::appname}/config.js",
         require => Class["nodeapp::prework"]
+    } ->
+
+    file { "nodeapp_logs" :
+        name   => "/srv/${::appname}/logs",
+        ensure => "directory",
+        owner  => "www-data",
+        group  => "www-data",
+        mode   => 775,
     }
 
     include nodeapp::system
