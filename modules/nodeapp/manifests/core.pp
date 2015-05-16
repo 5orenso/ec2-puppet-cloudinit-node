@@ -24,7 +24,7 @@ class nodeapp::core {
     } ->
 
     file { "nodeapp_configfile":
-        name    => "/srv/${::appname}/app/config/config.js",
+        name    => "/srv/${::appname}/config/config.js",
         ensure  => link,
         target  => "/srv/config/${::appname}/config.js",
         require => Class["nodeapp::prework"]
