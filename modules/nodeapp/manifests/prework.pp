@@ -8,8 +8,8 @@ class nodeapp::prework {
         mode   => 750,
     }
 
-    file { "nodeapp_etc" :
-        name   => "/etc/${::appname}",
+    file { "nodeapp_config" :
+        name   => "/srv/config/",
         ensure => "directory",
         owner  => "root",
         group  => "www-data",
