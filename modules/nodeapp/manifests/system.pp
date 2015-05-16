@@ -1,4 +1,4 @@
-class datapiper::system {
+class nodeapp::system {
 
 	file { "$::appname-upstart":
         name => "/etc/init/$::appname.conf",

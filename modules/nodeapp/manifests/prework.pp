@@ -1,4 +1,4 @@
-class datapiper::prework {
+class nodeapp::prework {
 
 	file { '/srv' :
         ensure => 'directory',

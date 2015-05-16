@@ -1,4 +1,4 @@
-class datapiper::postwork {
+class nodeapp::postwork {
 
 	# define the service to start
 	service { '$::appname':

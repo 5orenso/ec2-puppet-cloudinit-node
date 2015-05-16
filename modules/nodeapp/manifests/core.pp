@@ -1,4 +1,4 @@
-class datapiper::core {
+class nodeapp::core {
     notice("I am a node $::appname and want the software")
 
     exec { "$::appname-download_config":

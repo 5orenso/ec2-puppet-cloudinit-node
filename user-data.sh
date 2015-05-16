@@ -19,4 +19,4 @@ git clone https://github.com/5orenso/ec2-puppet-cloudinit-node.git /etc/puppet
 
 export FACTER_gitrepo=https://github.com/5orenso/simple-blog.git
 export FACTER_appname=simple-blog
-puppet apply /etc/puppet/manifests/init.pp
+puppet apply /etc/puppet/manifests/mainrun.pp
