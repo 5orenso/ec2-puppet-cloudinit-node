@@ -1,7 +1,8 @@
 class nodeapp::postwork {
 
 	# define the service to start
-	service { '$::appname':
+	service { 'nodeapp_service':
+		  name    => '$::appname',
     	ensure  => 'running',
     	enable  => 'true',
     	require => Class['$::appname::system'],

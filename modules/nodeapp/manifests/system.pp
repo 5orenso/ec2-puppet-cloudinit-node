@@ -1,6 +1,6 @@
 class nodeapp::system {
 
-	file { "$::appname-upstart":
+	file { "nodeapp_upstart":
         name => "/etc/init/$::appname.conf",
         ensure => present,
         owner => root,
@@ -10,7 +10,7 @@ class nodeapp::system {
         require => [Class['nodeapp::prework'], Class['nodeapp::core']],
     } ->
 
-    file { "$::appname-logrotate":
+    file { "nodeapp_logrotate":
         name => "/etc/logrotate.d/$::appname",
         ensure => present,
         owner => root,
@@ -21,18 +21,20 @@ class nodeapp::system {
     } ->
 
 
-  	file { '/etc/init.d/$::appname':
+  	file { 'nodeapp_initd':
+      name => '/etc/init.d/$::appname',
     	ensure => link,
     	target => '/lib/init/upstart-job',
   	}
 
-	service { '$::appname':
+	service { 'nodeapp_service':
+      name => '$::appname',
   		ensure     => 'running',
   		# provider   => 'upstart',
   		hasrestart => 'true',
   		hasstatus  => 'false',
   		enable     => 'true',
-  		subscribe  => [File['$::appname-upstart'], File['/etc/init.d/$::appname']],
+  		subscribe  => [File['nodeapp_upstart'], File['nodeapp_initd']],
 	}
 
 }

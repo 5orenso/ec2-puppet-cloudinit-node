@@ -17,6 +17,6 @@ git clone https://github.com/5orenso/ec2-puppet-cloudinit-node.git /etc/puppet
 # puppet config set gitrepo https://github.com/5orenso/simple-blog.git
 # puppet config set appname simple-blog
 
-export FACTER_gitrepo=https://github.com/5orenso/simple-blog.git
-export FACTER_appname=simple-blog
+export FACTER_gitrepo="https://github.com/5orenso/simple-blog.git"
+export FACTER_appname="simple-blog"
 puppet apply /etc/puppet/manifests/mainrun.pp
