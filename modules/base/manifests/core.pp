@@ -4,7 +4,7 @@ class base::core {
     package { 'dstat' :
         ensure => installed,
     }
-    package { 'make' :
+    package { 'gmake' :
         ensure => installed,
     }
 
