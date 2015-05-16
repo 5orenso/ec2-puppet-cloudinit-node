@@ -7,21 +7,21 @@ class datapiper::prework {
         mode   => 750,
     }
 
-    file { '/etc/$appname' :
+    file { '/etc/$::appname' :
         ensure => 'directory',
         owner  => 'root',
         group  => 'www-data',
         mode   => 750,
     }
 
-    file { '/var/log/$appname' :
+    file { '/var/log/$::appname' :
         ensure => 'directory',
         owner  => 'www-data',
         group  => 'www-data',
         mode   => 750,
     }
 
-    file { '/var/run/$appname' :
+    file { '/var/run/$::appname' :
         ensure => 'directory',
         owner  => 'www-data',
         group  => 'www-data',
