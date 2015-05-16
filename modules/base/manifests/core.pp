@@ -3,7 +3,7 @@ class base::core {
 
     package { 'dstat' :
         ensure => installed,
-    },
+    }
     package { 'make' :
         ensure => installed,
     }
