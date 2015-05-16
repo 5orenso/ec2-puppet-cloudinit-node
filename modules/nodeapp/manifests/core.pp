@@ -15,14 +15,8 @@ class nodeapp::core {
         require => Class["nodeapp::prework"]
     } ->
 
-    exec { "nodeapp_set_env":
-        command => "export HOME=/tmp/",
-        path    => "/usr/local/bin/:/usr/bin/:/bin/",
-        cwd     => "/tmp/",
-        require => Class["nodeapp::prework"]
-    } ->
-
     exec { "nodeapp_unpack_src":
+        environment => [ "HOME=/tmp/" ],
         command => "npm install --production",
         path    => "/usr/local/bin/:/usr/bin/:/bin/",
         cwd     => "/srv/${::appname}/",
