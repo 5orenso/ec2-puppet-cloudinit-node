@@ -16,7 +16,8 @@ class nodeapp::core {
     } ->
 
     exec { "nodeapp_unpack_src":
-        environment => [ "HOME=/tmp/" ],
+        environment => [ "HOME=/root/" ],
+        user    => "root",
         command => "npm install --production",
         path    => "/usr/local/bin/:/usr/bin/:/bin/",
         cwd     => "/srv/${::appname}/",
