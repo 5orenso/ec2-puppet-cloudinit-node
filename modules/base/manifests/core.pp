@@ -10,5 +10,8 @@ class base::core {
     package { 'make' :
         ensure => installed,
     }
+    package { 's3cmd' :
+        ensure => installed
+    }
 
 }
